@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isset($_SESSION["admin_logged_in"])) {
+    header("Location: admin_login.php");
+    exit;
+}
 include 'connect.php';
 
 $result = $conn->query("SELECT * FROM feedback ORDER BY created_at DESC");
@@ -19,6 +24,9 @@ $result = $conn->query("SELECT * FROM feedback ORDER BY created_at DESC");
   </style>
 </head>
 <body>
+<div class="top-bar">
+    <a href="logout.php">Logout</a>
+  </div>
   <h2>Feedback Management</h2>
   <table>
     <tr>
