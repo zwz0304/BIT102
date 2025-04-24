@@ -26,7 +26,7 @@ $result = $conn->query("SELECT * FROM feedback ORDER BY created_at DESC");
 <body>
 <div class="top-bar">
     <a href="logout.php">Logout</a>
-  </div>
+</div>
   <h2>Feedback Management</h2>
   <table>
     <tr>
